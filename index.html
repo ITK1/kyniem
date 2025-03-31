@@ -15,6 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Thêm CSS của Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Thêm JS của Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <!-- Header Section -->
@@ -117,6 +124,7 @@
       </div>
     </section>
     <!-- thay ảnh ở đây và thêm ảnh ở đây -->
+
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
       <div class="container">
@@ -125,37 +133,355 @@
         <div class="gallery-container">
           <!-- Mẫu ảnh, sẽ được thay thế bằng ảnh thật -->
           <div class="gallery-item">
-            <img src="img/lần đầu.jpg" alt="Kỷ niệm 1" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Kỷ niệm đầu tiên</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/cafe.jpg" alt="Kỷ niệm 2" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Chuyến đi chơi</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/cool.jpg" alt="Kỷ niệm 3" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Sinh nhật</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/nắm tay.jpg" alt="Kỷ niệm 4" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Kỷ niệm 100 ngày</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/noeln.jpg" alt="Kỷ niệm 5" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Lễ Giáng sinh</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/sinhnhat.jpg" alt="Kỷ niệm 6" />
+            <!-- Swiper Container -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://source.unsplash.com/random/600x400?sig=1"
+                    alt="Ảnh 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cool.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cafe.jpg" alt="Ảnh 3" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/bae.jpg" alt="Ảnh 4" />
+                </div>
+              </div>
+
+              <!-- Nút điều hướng -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+
+              <!-- Chỉ mục (pagination) -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              var swiper = new Swiper(".swiper", {
+                loop: true, // Vòng lặp vô hạn
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000, // Tự động lướt sau 3 giây
+                  disableOnInteraction: false,
+                },
+                effect: "coverflow", // Hiệu ứng lướt đẹp mắt
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
+              });
+            </script>
             <div class="gallery-overlay">
               <span>Valentine</span>
             </div>
