@@ -270,6 +270,111 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+localStorage.removeItem("loveNotes");
+// Xử lý thêm lời nhắn yêu thương
+document.addEventListener("DOMContentLoaded", function () {
+  // Tải lời nhắn từ localStorage
+  loadNotes();
+
+  // Xử lý sự kiện khi nhấn nút gửi
+  const addNoteBtn = document.getElementById("addNote");
+  if (addNoteBtn) {
+    addNoteBtn.addEventListener("click", function () {
+      const noteText = document.getElementById("noteText").value.trim();
+
+      if (noteText !== "") {
+        // Tạo đối tượng tin nhắn mới
+        const newNote = {
+          content: noteText,
+          date: getCurrentDate(),
+        };
+
+        // Thêm tin nhắn vào giao diện
+        addNoteToDisplay(newNote);
+
+        // Lưu tin nhắn vào localStorage
+        saveNoteToStorage(newNote);
+
+        // Xóa nội dung trong textarea
+        document.getElementById("noteText").value = "";
+      }
+    });
+  }
+
+  // Hàm lấy ngày hiện tại định dạng dd/mm/yyyy
+  function getCurrentDate() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, "0");
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const year = today.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
+  // Hàm thêm tin nhắn vào giao diện
+  function addNoteToDisplay(note) {
+    const notesDisplay = document.getElementById("notesDisplay");
+    if (!notesDisplay) return;
+
+    const noteElement = document.createElement("div");
+    noteElement.className = "note";
+
+    noteElement.innerHTML = `
+      <p class="note-content">${note.content}</p>
+      <span class="note-date">${note.date}</span>
+    `;
+
+    // Thêm hiệu ứng xuất hiện
+    noteElement.style.opacity = "0";
+
+    // Thêm vào đầu danh sách
+    notesDisplay.insertBefore(noteElement, notesDisplay.firstChild);
+
+    // Kích hoạt hiệu ứng
+    setTimeout(() => {
+      noteElement.style.opacity = "1";
+      noteElement.style.transition = "opacity 0.5s ease-in";
+    }, 10);
+  }
+
+  // Hàm lưu tin nhắn vào localStorage
+  function saveNoteToStorage(note) {
+    // Lấy danh sách tin nhắn hiện có
+    let notes = JSON.parse(localStorage.getItem("loveMessages")) || [];
+
+    // Thêm tin nhắn mới vào đầu danh sách
+    notes.unshift(note);
+
+    // Lưu lại vào localStorage
+    localStorage.setItem("loveMessages", JSON.stringify(notes));
+  }
+
+  // Hàm tải tin nhắn từ localStorage
+  function loadNotes() {
+    const notes = JSON.parse(localStorage.getItem("loveMessages")) || [];
+    const notesDisplay = document.getElementById("notesDisplay");
+
+    if (notesDisplay) {
+      // Xóa các tin nhắn mặc định nếu có tin nhắn trong localStorage
+      if (notes.length > 0) {
+        notesDisplay.innerHTML = "";
+      }
+
+      // Thêm từng tin nhắn vào giao diện
+      notes.forEach((note) => {
+        const noteElement = document.createElement("div");
+        noteElement.className = "note";
+
+        noteElement.innerHTML = `
+          <p class="note-content">${note.content}</p>
+          <span class="note-date">${note.date}</span>
+        `;
+
+        notesDisplay.appendChild(noteElement);
+      });
+    }
+  }
+});
+
 // main.js - Main JavaScript file for Kỷ Niệm Hẹn Hò website
 // Thiết kế và phát triển bởi IT(K)
-// Copyright © 2023 IT(K). All rights reserved.
+// Copyright © 2024 IT(K)

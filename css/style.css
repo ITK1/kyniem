@@ -828,25 +828,6 @@ section:nth-child(even) {
   font-size: 1rem;
 }
 
-.image-upload-container {
-  margin-bottom: 20px;
-}
-
-.image-upload-label {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: var(--light-text);
-  padding: 12px 20px;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: var(--transition);
-  margin-bottom: 15px;
-}
-
-.image-upload-label:hover {
-  background-color: var(--primary-color);
-}
-
 .image-preview {
   border: 2px dashed #ccc;
   border-radius: var(--border-radius);
